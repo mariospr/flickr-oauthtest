@@ -1,0 +1,9 @@
+Small test application written in C to check how Flickr's OAuth based
+authentication system works and how a client application/library
+should implement it.
+
+You just need to set the right values for CONSUMER_KEY and CONSUMER_SECRET
+in src/flick-oauthtest.c and you should be ready to go.
+
+This application is licensed under the terms of version 2 of the GNU
+General Public License. Check the COPYING file for more details.
