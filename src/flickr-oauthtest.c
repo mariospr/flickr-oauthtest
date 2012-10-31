@@ -380,7 +380,7 @@ main (int argc, char **argv)
                                 "oauth_callback", OAUTH_CALLBACK_URL,
                                 NULL);
 
-  g_print ("Open the following URL in the browser to request token:\n%s\n", signed_url);
+  g_print ("Open the following URL in the browser to get the request token and secret:\n%s\n", signed_url);
   g_free (signed_url);
   g_free (signing_key);
 
@@ -394,7 +394,7 @@ main (int argc, char **argv)
   /* Let the user authorize the application and grab the verification code */
   g_print ("\nOpen the following URL in the browser to authorize:\nhttp://www.flickr.com/services/oauth/authorize?perms=write&oauth_token=%s\n", token);
 
-  g_print ("\nEnter the verification code:"); gets(line);
+  g_print ("\nEnter the verification code (XXX-XXX-XXX):"); gets(line);
   verifier = _encode_uri (line);
 
   /* Exchange the request token for an access token */
@@ -404,7 +404,7 @@ main (int argc, char **argv)
                                 "oauth_verifier", verifier,
                                 NULL);
 
-  g_print ("\nOpen the following URL in the browser to request the access token: \n%s\n", signed_url);
+  g_print ("\nOpen the following URL in the browser to request the access token and secret: \n%s\n", signed_url);
   g_free (signed_url);
   g_free (signing_key);
 
